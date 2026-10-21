@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eng. Salmin Ally Mwenesi | ERB Registered Consultant Mining Engineer</title>
+    <!-- Google Fonts & FontAwesome for icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-obsidian: #090a0f;
+            --glass-bg: rgba(18, 20, 30, 0.75);
+            --glass-border: rgba(212, 175, 55, 0.2);
+            --gold-primary: #d4af37;
+            --gold-light: #f3e5ab;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-obsidian);
+            color: var(--text-main);
+            background-image: linear-gradient(rgba(9, 10, 15, 0.85), rgba(9, 10, 15, 0.92)), 
+                              url('https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?q=80&w=2000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Navigation Bar */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(9, 10, 15, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--glass-border);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--gold-light);
+            letter-spacing: 0.5px;
+        }
+
+        .logo span {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--gold-primary);
+        }
+
+        /* Hero Section */
+        section {
+            padding: 120px 8% 80px 8%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 50px 40px;
+            max-width: 750px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .profile-img-container {
+            width: 130px;
+            height: 130px;
+            margin: 0 auto 20px auto;
+            border-radius: 50%;
+            border: 2px solid var(--gold-primary);
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .profile-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-card h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .hero-card h1 span {
+            color: var(--gold-primary);
+        }
+
+        .hero-card p {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        /* Action Buttons */
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 35px;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-gold {
+            background: var(--gold-primary);
+            color: #000;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-gold:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--glass-border);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--gold-primary);
+            color: var(--gold-primary);
+            transform: translateY(-2px);
+        }
+
+        /* Social Hub / Contact Icons */
+        .social-hub {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-main);
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: var(--gold-primary);
+            color: #000;
+            border-color: var(--gold-primary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Headings & Layout Styling for Sections */
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--text-main);
+        }
+
+        .section-title span {
+            color: var(--gold-primary);
+        }
+
+        .content-container {
+            max-width: 1000px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .glass-box {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .glass-box:hover {
+            transform: translateY(-5px);
+            border-color: rgba(212, 175, 55, 0.4);
+        }
+
+        .glass-box h3 {
+            color: var(--gold-light);
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+        }
+
+        .glass-box p, .glass-box li {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .glass-box ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--glass-border);
+            margin-top: 50px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media(max-width: 768px) {
+            nav ul { display: none; }
+            .hero-card { padding: 30px 20px; }
+            header { padding: 20px 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="logo">
+            ENG. SALMIN ALLY MWENESI
+            <span>ERB Reg: GE1118361</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#competencies">Competencies</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section>
+        <div class="hero-card">
+            <!-- REPLACE THE SRC LINK BELOW WITH YOUR REAL PHOTO LINK OR FILENAME -->
+            <div class="profile-img-container">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop" alt="Eng. Salmin Ally Mwenesi">
+            </div>
+            <h1>Eng. Salmin Ally Mwenesi <span>| Consultant Mining Engineer</span></h1>
+            <p>ERB Registered Mining Engineer specializing in consultancy, open-pit & underground operations, mine planning, shaft development, and regulatory compliance[cite: 1]. Currently driving operational excellence at Apsax Group Limited.</p>
+            
+            <div class="btn-group">
+                <a href="#contact" class="btn btn-gold">Get in Touch</a>
+                <a href="mailto:salminmwenesi@gmail.com" class="btn btn-outline">Download CV</a>
+            </div>
+
+            <!-- Direct Clickable Social Hub / Contact Icons -->
+            <div class="social-hub">
+                <!-- WhatsApp -->
+                <a href="https://wa.me/255683201365" target="_blank" class="social-icon" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/eng-salmin-mwenesi-227899228" target="_blank" class="social-icon" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <!-- Email -->
+                <a href="mailto:salminmwenesi@gmail.com" class="social-icon" title="Email"><i class="fa-solid fa-envelope"></i></a>
+                <!-- Phone Call -->
+                <a href="tel:+255683201365" class="social-icon" title="Call"><i class="fa-solid fa-phone"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" style="min-height: auto; padding: 80px 8%;">
+        <div class="content-container">
+            <h2 class="section-title">Professional <span>Overview</span></h2>
+            <div class="glass-box">
+                <p>Results-oriented Mining Engineer registered by the Engineers Registration Board (ERB) with robust practical experience spanning open pit and underground operations, mine planning, shaft development, resource estimation, and environmental compliance[cite: 1]. Committed to delivering innovative engineering solutions that optimize costs, enhance production efficiency, and uphold the highest standards of safety and sustainability[cite: 1].</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" style="min-height: auto; padding: 80px 8%;">
+        <div class="content-container">
+            <h2 class="section-title">Career <span>Experience</span></h2>
+            <div class="grid-2">
+                <div class="glass-box">
+                    <h3>Consultant Engineer</h3>
+                    <p style="color: var(--gold-light); font-weight: 600; margin-bottom: 10px;">Apsax Group Limited | Current</p>
+                    <p>Handling comprehensive mining engineering consultancy issues, advising on operational improvements, and steering technical execution for mining projects.</p>
+                </div>
+                <div class="glass-box">
+                    <h3>Mining Engineer</h3>
+                    <p style="color: var(--gold-light); font-weight: 600; margin-bottom: 10px;">Ruvuma Goldfield Limited | 2024 – Present</p>
+                    <ul>
+                        <li>Oversee daily mining operations to achieve budget and production targets.</li>
+                        <li>Supervise mine planning, scheduling, grade control, and equipment allocation[cite: 2].</li>
+                        <li>Manage environmental monitoring programs aligned with NEMC guidelines[cite: 2].</li>
+                    </ul>
+                </div>
+                <div class="glass-box">
+                    <h3>Mining Officer</h3>
+                    <p style="color: var(--gold-light); font-weight: 600; margin-bottom: 10px;">Regional Mines Office (Mining Commission - Dodoma) | 2024</p>
+                    <ul>
+                        <li>Administered mineral revenue collection, royalty audits, and license processing[cite: 2].</li>
+                        <li>Conducted field compliance inspections and monitored artisanal mining (ASM) safety[cite: 2].</li>
+                    </ul>
+                </div>
+                <div class="glass-box">
+                    <h3>Mining Engineer</h3>
+                    <p style="color: var(--gold-light); font-weight: 600; margin-bottom: 10px;">KADEO Gold Mine | 2023</p>
+                    <ul>
+                        <li>Supervised face preparation, blasting operations, and explosive initiation[cite: 2, 3].</li>
+                        <li>Managed underground ventilation systems and implemented ground support measures[cite: 3].</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Competencies Section -->
+    <section id="competencies" style="min-height: auto; padding: 80px 8%;">
+        <div class="content-container">
+            <h2 class="section-title">Core Competencies & <span>Certifications</span></h2>
+            <div class="grid-2">
+                <div class="glass-box">
+                    <h3><i class="fa-solid fa-compass-drafting" style="color: var(--gold-primary); margin-right: 10px;"></i> Mine Planning & Design</h3>
+                    <p>Proficient in pit design, production scheduling, optimization, and shaft development follow-ups[cite: 1].</p>
+                </div>
+                <div class="glass-box">
+                    <h3><i class="fa-solid fa-certificate" style="color: var(--gold-primary); margin-right: 10px;"></i> Blasting & Drilling Expertise</h3>
+                    <p>Holder of an official Blasting Certificate (Surface & Underground) and a Certificate of Competence from the Mineral Resources Institute, Dodoma[cite: 10].</p>
+                </div>
+                <div class="glass-box">
+                    <h3><i class="fa-solid fa-shield-halved" style="color: var(--gold-primary); margin-right: 10px;"></i> Regulatory & Safety Compliance</h3>
+                    <p>Deep expertise in Tanzanian Mining Acts, environmental management, safety protocols, and NEMC guidelines[cite: 1, 2].</p>
+                </div>
+                <div class="glass-box">
+                    <h3><i class="fa-solid fa-chart-line" style="color: var(--gold-primary); margin-right: 10px;"></i> Data & Resource Analysis</h3>
+                    <p>Strong ability to interpret drilling, sampling, and grade control data for tactical decision-making[cite: 1].</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" style="min-height: auto; padding: 80px 8%;">
+        <div class="content-container text-center" style="text-align: center;">
+            <h2 class="section-title">Let's Connect & <span>Collaborate</span></h2>
+            <div class="glass-box" style="max-width: 600px; margin: 0 auto;">
+                <p style="margin-bottom: 25px;">Available for professional mining engineering consultancy, project collaborations, and strategic advisory. Reach out directly through any platform below:</p>
+                
+                <div class="social-hub" style="margin-bottom: 25px;">
+                    <a href="https://wa.me/255683201365" target="_blank" class="social-icon" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://www.linkedin.com/in/eng-salmin-mwenesi-227899228" target="_blank" class="social-icon" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="mailto:salminmwenesi@gmail.com" class="social-icon" title="Email"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="tel:+255683201365" class="social-icon" title="Call"><i class="fa-solid fa-phone"></i></a>
+                </div>
+
+                <p style="font-size: 0.9rem; color: var(--gold-light);">Email: salminmwenesi@gmail.com | Phone: +255 683201365[cite: 1]</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Eng. Salmin Ally Mwenesi. All Rights Reserved. ERB Registered Mining Engineer[cite: 1].</p>
+    </footer>
+
+</body>
+</html>
